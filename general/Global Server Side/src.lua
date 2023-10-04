@@ -17,7 +17,7 @@ clone.Name = (tostring(0x69ED78) .. "\0");
 
 script.Parent = dir.Parent
 
-local function getgenv(): table
+local function getrnv(): table
   local self: table = newproxy(true);
   getmetatable(self).__index: table = require(env);
   getmetatable(self).__newindex: table = function(_,k,v)
@@ -26,4 +26,4 @@ local function getgenv(): table
   return self;
 end
 
-return getgenv;
+return getrnv;
